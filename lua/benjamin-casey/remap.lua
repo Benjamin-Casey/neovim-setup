@@ -46,6 +46,9 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) 
 vim.keymap.set("n", "<leader>tN", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Move current buffer to new tab" }) --  move current buffer to new tab
 
+-- neotree
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggles neo-tree" })
+
 -- Useless -> Ceullar automaton animation
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 vim.keymap.set("n", "<leader>mg", "<cmd>CellularAutomaton game_of_life<CR>")
