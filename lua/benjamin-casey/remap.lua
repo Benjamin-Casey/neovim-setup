@@ -13,19 +13,19 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Paste over selection without copying
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- Yank to system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
 
 -- We don't want to press Q?
 vim.keymap.set("n", "Q", "<nop>")
 
 -- Delete to void register
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
 
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
@@ -35,8 +35,10 @@ vim.keymap.set("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current spli
 vim.keymap.set("n", "<leader>so", "<C-w>o", { desc = "Close all other windows" })
 vim.keymap.set("n", "<leader>sn", "<C-w>w", { desc = "Go to next window" })
 vim.keymap.set("n", "<leader>sN", "<C-w>W", { desc = "Go to previous window" })
+vim.keymap.set("n", "<leader>sp", "<cmd>bp<cr>", { desc = "Go to previous buffer" })
+vim.keymap.set("n", "<leader>sP", "<cmd>bn<cr>", { desc = "Go to next buffer" })
 
-
+-- tab management
 vim.keymap.set("n", "<leader>T", "<cmd>tabnew<CR>", { desc = "Create new tab" })
 vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
 vim.keymap.set("n", "<leader>to", "<cmd>tabonly<CR>", { desc = "Closes all other tabs" })
