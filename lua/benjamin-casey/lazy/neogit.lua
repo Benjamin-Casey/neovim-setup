@@ -11,7 +11,7 @@ return {
   },
   config = true,
   keys = {
-      { "<leader>gs", "<cmd>Neogit<CR>"}
+      { "<leader>gn", "<cmd>Neogit<CR>"}
     }
 }
 }
