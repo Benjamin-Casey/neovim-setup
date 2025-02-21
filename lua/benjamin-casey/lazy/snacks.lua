@@ -2,10 +2,23 @@ return {
 	"folke/snacks.nvim",
   lazy = false,
 	opts = {
-		zen = { enabled = true },
-		scratch = { enabled = true },
-		indent = { enabled = true },
-	},
+    zen = {
+      toggles = {
+        dim = false,
+        gitsigns = false,
+        mini_diff_signs = false,
+        diagnostics = false,
+        inlay_hints = false,
+      },
+      show = {
+        statusline = false,
+        tabline = true,
+      },
+      win = { style = "zen" },
+    },
+    scratch = { enabled = true },
+    indent = { enabled = true },
+  },
 
 	keys = {
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
@@ -17,7 +30,7 @@ return {
     { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
     { "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
     { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
-    { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
+    -- { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
     -- { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
 	},
