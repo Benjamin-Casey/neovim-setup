@@ -1,5 +1,6 @@
 return {
 	"lewis6991/gitsigns.nvim",
+  lazy = false,
 	opts = {},
 	config = function()
 		require("gitsigns").setup({
@@ -30,9 +31,16 @@ return {
 				end)
 
 				-- Toggles
-				map("n", "<leader>gB", gitsigns.toggle_current_line_blame)
+				-- map("n", "<leader>gB", gitsigns.toggle_current_line_blame)
 				map("n", "<leader>gd", gitsigns.diffthis)
 			end,
 		})
 	end,
+  keys = {
+    { "<leader>gb", "<cmd>Gitsigns blame_line<CR>", desc="Git signs line blame"},
+    { "<leader>gB", "<cmd>Gitsigns blame<CR>", desc="Git signs buffer blame"},
+    { "<leader>gp", "<cmd>Gitsigns preview_hunk_inline<CR>", desc="Git signs preview hunk inline"},
+    { "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", desc="Git signs reset hunk"},
+    { "<leader>gc", "<cmd>Gitsigns select_hunk<CR>", desc="Git signs select hunk"},
+  }
 }
