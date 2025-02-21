@@ -22,10 +22,10 @@ return {
             desc = 'Telescope help tags'
         })
     end,
-    keys = {
-  --   { "<leader>ff", "<cmd>Telescope git_files<cr>", desc="Find git files"}
-        { "<leader>fd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
-
-  }
+  --   keys = {
+  -- --   { "<leader>ff", "<cmd>Telescope git_files<cr>", desc="Find git files"}
+  --       { "<leader>fd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
+  --
+  -- }
 }
 
