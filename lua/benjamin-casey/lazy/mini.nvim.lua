@@ -45,7 +45,7 @@ return {
     -- Maximum number of windows to show side by side
     max_number = math.huge,
     -- Whether to show preview of file/directory under cursor
-    preview = true,
+    preview = false,
     -- Width of focused window
     width_focus = 50,
     -- Width of non-focused window
