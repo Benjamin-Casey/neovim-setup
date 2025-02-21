@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Go to file explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Move selection up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -48,6 +48,10 @@ vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Move current bu
 
 -- neotree
 vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Toggles miniFiles" })
+
+-- No highlight
+vim.keymap.set("n", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
+vim.keymap.set("v", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 
 -- Useless -> Ceullar automaton animation
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
