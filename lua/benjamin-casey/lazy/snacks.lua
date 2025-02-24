@@ -17,7 +17,7 @@ return {
       win = { style = "zen" },
     },
     scratch = { enabled = true },
-    indent = { enabled = true },
+    indent = {},
   },
 
 	keys = {
