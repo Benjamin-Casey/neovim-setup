@@ -9,9 +9,13 @@ return {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/nvim-cmp",
     "j-hui/fidget.nvim",
+    "stevearc/conform.nvim"
   },
 
   config = function()
+
+    require('conform').setup()
+
     local cmp = require('cmp')
     local cmp_lsp = require("cmp_nvim_lsp")
     local capabilities = vim.tbl_deep_extend(
@@ -28,7 +32,7 @@ return {
         "ts_ls",
       },
       handlers = {
-        function(server_name)         -- default handler (optional)
+        function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup {
             capabilities = capabilities
           }
