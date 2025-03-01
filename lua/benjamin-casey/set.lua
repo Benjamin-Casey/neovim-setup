@@ -23,3 +23,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 vim.g.snacks_animate = false
+
+-- Disable comments on new line
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
