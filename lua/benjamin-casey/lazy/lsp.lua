@@ -12,9 +12,11 @@ return {
 		"hrsh7th/nvim-cmp",
 		"j-hui/fidget.nvim",
 		"stevearc/conform.nvim",
+		"ray-x/lsp_signature.nvim",
 	},
 
 	config = function()
+
 		require("conform").setup()
 
 		local cmp = require("cmp")
@@ -53,13 +55,22 @@ return {
 						},
 					})
 				end,
+				["clangd"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.clangd.setup({
+						capabilities = capabilities,
+						cmd = { "clangd", "--function-arg-placeholders=false" },
+					})
+				end,
 			},
 		})
 
-    -- require("mason-nvim-lint").setup({
-    --   ensure_installed = {},
-    --   ignore_installed = { 'ruby', 'clj-kondo', 'janet', 'inko' },
-    -- })
+    require('lsp_signature').setup()
+
+		-- require("mason-nvim-lint").setup({
+		--   ensure_installed = {},
+		--   ignore_installed = { 'ruby', 'clj-kondo', 'janet', 'inko' },
+		-- })
 
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -77,16 +88,16 @@ return {
 			}),
 		})
 
-		-- vim.diagnostic.config({
-		-- 	-- update_in_insert = true,
-		-- 	float = {
-		-- 		focusable = false,
-		-- 		style = "minimal",
-		-- 		border = "rounded",
-		-- 		source = "always",
-		-- 		header = "",
-		-- 		prefix = "",
-		-- 	},
-		-- })
+		vim.diagnostic.config({
+			-- update_in_insert = true,
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+			},
+		})
 	end,
 }
