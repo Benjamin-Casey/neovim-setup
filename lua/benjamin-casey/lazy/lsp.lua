@@ -3,8 +3,6 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		-- "mfussenegger/nvim-lint",
-		-- "rshkarin/mason-nvim-lint",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
@@ -12,7 +10,6 @@ return {
 		"hrsh7th/nvim-cmp",
 		"j-hui/fidget.nvim",
 		"stevearc/conform.nvim",
-		"ray-x/lsp_signature.nvim",
 	},
 
 	config = function()
@@ -65,12 +62,6 @@ return {
 			},
 		})
 
-    require('lsp_signature').setup()
-
-		-- require("mason-nvim-lint").setup({
-		--   ensure_installed = {},
-		--   ignore_installed = { 'ruby', 'clj-kondo', 'janet', 'inko' },
-		-- })
 
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
