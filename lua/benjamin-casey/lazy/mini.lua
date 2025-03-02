@@ -97,6 +97,5 @@ return {
 			-- idle time if user input is required.
 			silent = false,
 		})
-    require('mini.completion').setup()
 	end,
 }
