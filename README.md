@@ -1,32 +1,20 @@
-# Todo
+# NVIM Wants:
 
-- [x] configure gitsings keymaps to move around
-      vim.
-- [x] configure trouble keyamps to move between problems
+- [x] Current keybinds and `set.lua` config
+- [x] Git:
+    - [x] Diff - conflict resolution
+    - [ ] Blame
+    - [ ] Status line
+- [x] Lualine (nice status bar at bottom)
+- [x] LSP
+- [x] Blink autocomplete
+- [ ] Formatting
+- [ ] Trouble? Investigate alternatives
+- [x] Outline - aerial ?
+- [x] Mini.ai - better vi?, va?, etc.
+- [x] File searching
+- [x] Colourscheme
+- [x] Flash :)
+- [x] Autopairs + emmet
+- [x] Treesitter
 
-# Things I Want
-
-- Multi-line commenting with a keypress
-  - Learn movement
-- ~Formatting~
-- ~Surround for brackets, etc.~ - mini.surround?
-- Yank to system clipboard
-- Git - merge conflict resolution - fugitive
-- Open to new window from telescope
-
-# Keybinds
-
-## Base Keys
-
-| Key  | Action      |
-| ---- | ----------- |
-| `g`  | Go to       |
-| `_g` | Git action  |
-| `f`  | Find        |
-| `c`  | Code action |
-
-### Go to
-
-### Find
-
-### Code action
