@@ -1,5 +1,4 @@
 # NVIM Wants:
-
 - [x] Current keybinds and `set.lua` config
 - [x] Git:
     - [x] Diff - conflict resolution
