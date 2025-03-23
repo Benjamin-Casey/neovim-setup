@@ -47,7 +47,7 @@ vim.keymap.set("n", "<leader>tN", "<cmd>tabp<CR>", { desc = "Go to previous tab"
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Move current buffer to new tab" }) --  move current buffer to new tab
 
 -- File explorer toggle - TODO
-vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Toggles miniFiles" })
+vim.keymap.set("n", "<leader>E", "<cmd>lua MiniFiles.open()<cr>", { desc = "Toggles miniFiles" })
 
 -- No highlight
 vim.keymap.set("n", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
