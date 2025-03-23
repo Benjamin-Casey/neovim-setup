@@ -53,6 +53,9 @@ vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Togg
 vim.keymap.set("n", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 vim.keymap.set("v", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 
+-- Code action
+vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Show LSP code actions"})
+
 -- Useless -> Ceullar automaton animation
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 vim.keymap.set("n", "<leader>mg", "<cmd>CellularAutomaton game_of_life<CR>")
