@@ -22,6 +22,13 @@ return {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({
 						capabilities = require("blink.cmp").get_lsp_capabilities(),
+						settings = {
+							pylsp = {
+								plugins = {
+									pycodestyle = { enabled = false },
+								},
+							},
+						},
 					})
 				end,
 

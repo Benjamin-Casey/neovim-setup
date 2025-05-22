@@ -19,10 +19,15 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.textwidth = 88
 vim.opt_local.colorcolumn = "88"
 
 vim.g.snacks_animate = false
+
+-- Change linenumber color
+vim.o.cursorline = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Disable comments on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
