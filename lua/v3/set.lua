@@ -21,8 +21,6 @@ vim.opt.updatetime = 50
 
 vim.opt_local.colorcolumn = "88"
 
-vim.g.snacks_animate = false
-
 -- Change linenumber color
 vim.o.cursorline = true
 

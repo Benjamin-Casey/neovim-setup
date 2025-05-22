@@ -367,5 +367,7 @@ return {
 	end,
 	keys = {
 		{ "<leader>aa", "<cmd>AerialToggle!<CR>", { desc = "Aerial toggle" } },
+    { "[a", "<cmd>AerialPrev<CR>", desc = "Jump to previous aerial symbol" },
+    { "]a", "<cmd>AerialNext<CR>", desc = "Jump to next aerial symbol" }
 	},
 }
