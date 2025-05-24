@@ -11,5 +11,6 @@ return {
     keys = {
       { "<leader>gn", "<cmd>Neogit<CR>" },
     },
+    lazy = false
   },
 }
