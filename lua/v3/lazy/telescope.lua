@@ -7,6 +7,12 @@ return {
     require("telescope").setup({})
 
     local builtin = require("telescope.builtin")
+
+    vim.keymap.set("n", "<leader>F", "<cmd>Telescope<CR>", {
+      desc = "Telescope pickers"
+    })
+
+    -- Standard
     vim.keymap.set("n", "<leader>ff", builtin.find_files, {
       desc = "Telescope find files",
     })
