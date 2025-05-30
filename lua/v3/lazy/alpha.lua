@@ -30,8 +30,10 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("g", " Neogit", ":Neogit<CR>"),
       dashboard.button("f", " Find files", ":Telescope find_files<CR>"),
+      dashboard.button("e", " Find files", ":Oil<CR>"),
       dashboard.button("r", " Recent files", ":Telescope oldfiles<CR>"),
-      dashboard.button("l", " Lazy", ":Lazy<CR>")
+      dashboard.button("l", " Lazy", ":Lazy<CR>"),
+      dashboard.button("m", " Mason", ":Mason<CR>")
     }
 
     -- Set footer
