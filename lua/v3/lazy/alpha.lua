@@ -33,7 +33,8 @@ return {
       dashboard.button("e", " Oil", ":Oil<CR>"),
       dashboard.button("r", " Recent files", ":Telescope oldfiles<CR>"),
       dashboard.button("l", " Lazy", ":Lazy<CR>"),
-      dashboard.button("m", " Mason", ":Mason<CR>")
+      dashboard.button("m", " Mason", ":Mason<CR>"),
+      dashboard.button("q", " Exit", ":qa<CR>"),
     }
 
     -- Set footer
