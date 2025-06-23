@@ -21,13 +21,13 @@ return {
         invert_signs = false,
         invert_tabline = false,
         inverse = true, -- invert background for search, diffs, statuslines and errors
-        contrast = "hard",  -- can be "hard", "soft" or empty string
+        contrast = "",  -- can be "hard", "soft" or empty string
         palette_overrides = {},
         overrides = {},
         dim_inactive = false,
         transparent_mode = false,
       })
-      vim.cmd("colorscheme gruvbox")
+      -- vim.cmd("colorscheme gruvbox")
     end
   },
   {
@@ -175,6 +175,17 @@ return {
 
       -- setup must be called before loading
       -- vim.cmd.colorscheme "catppuccin"
+    end
+  },
+  {
+    'sainnhe/everforest',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.everforest_enable_italic = true
+      vim.cmd.colorscheme('everforest')
     end
   }
 }

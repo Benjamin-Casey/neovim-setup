@@ -28,10 +28,10 @@ vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("v", "<leader>d", '"_d')
 
 -- window management
-vim.keymap.set("n", "<leader>sv", "<C-w>v<C-w>w", { desc = "Split window vertically" })     -- split window vertically
-vim.keymap.set("n", "<leader>sh", "<C-w>s<C-w>w", { desc = "Split window horizontally" })   -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })      -- make split windows equal width & height
-vim.keymap.set("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+vim.keymap.set("n", "<leader>sv", "<C-w>v<C-w>w", { desc = "Split window vertically" })   -- split window vertically
+vim.keymap.set("n", "<leader>sh", "<C-w>s<C-w>w", { desc = "Split window horizontally" }) -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })          -- make split windows equal width & height
+vim.keymap.set("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" })     -- close current split window
 vim.keymap.set("n", "<leader>so", "<C-w>o", { desc = "Close all other windows" })
 vim.keymap.set("n", "<leader>sn", "<C-w>w", { desc = "Go to next window" })
 vim.keymap.set("n", "<leader>sN", "<C-w>W", { desc = "Go to previous window" })
@@ -52,9 +52,18 @@ vim.keymap.set("n", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 vim.keymap.set("v", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 
 -- Code action
-vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Show LSP code actions"})
+vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Show LSP code actions" })
+
+--toggle relative vs absolute line numbers
+vim.keymap.set("n", "<leader>nn", function()
+  if vim.wo.relativenumber then
+    vim.wo.relativenumber = false
+    vim.wo.number = true
+  else
+    vim.wo.relativenumber = true
+  end
+end)
 
 -- Useless -> Ceullar automaton animation
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 vim.keymap.set("n", "<leader>mg", "<cmd>CellularAutomaton game_of_life<CR>")
-
