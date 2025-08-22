@@ -18,3 +18,21 @@
 ## Lastly:
 
 - [ ] Review binds
+
+
+---
+
+# V4:
+
+Copy accross:
+- LSP
+- Blink (autocomplete)
+- Harpoon
+- File explorer
+- Git
+- Aerial Outline
+- Flash
+
+Fix:
+- Surround support (see helix binds)
+- Formatting

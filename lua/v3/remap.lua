@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- format file (make pretty)
-vim.keymap.set("n", "<leader>mp", function() vim.lsp.buf.format() end, { desc = "Format buffer" })
+-- vim.keymap.set("n", "<leader>mp", function() vim.lsp.buf.format() end, { desc = "Format buffer" })
 
 -- Move selection up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
