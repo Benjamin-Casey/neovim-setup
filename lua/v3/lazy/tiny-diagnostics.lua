@@ -9,11 +9,11 @@ return {
 			preset = "classic",
 
 			-- Set the background of the diagnostic to transparent
-			transparent_bg = false,
+			transparent_bg = true,
 
 			-- Set the background of the cursorline to transparent (only for the first diagnostic)
 			-- Default is true in the source code, not false as in the old README
-			transparent_cursorline = true,
+			transparent_cursorline = false,
 
 			hi = {
 				-- Highlight group for error messages
