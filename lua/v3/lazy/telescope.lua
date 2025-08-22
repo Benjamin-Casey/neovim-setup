@@ -56,10 +56,10 @@ return {
     vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {
       desc = "Telescope LSP references",
     })
-    vim.keymap.set("n", "<leader>fD", builtin.diagnostics, {
+    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {
       desc = "Telescope diagnostics",
     })
-    vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions, {
+    vim.keymap.set("n", "<leader>fD", builtin.lsp_definitions, {
       desc = "Telescope lsp_definitions",
     })
     vim.keymap.set("n", "<leader>fo", builtin.lsp_document_symbols, {
