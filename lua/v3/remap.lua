@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- format file (make pretty)
+-- format file (make pretty)  - replaced by Conform plugin
 -- vim.keymap.set("n", "<leader>mp", function() vim.lsp.buf.format() end, { desc = "Format buffer" })
 
 -- Move selection up/down
@@ -51,8 +51,12 @@ vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Move current bu
 vim.keymap.set("n", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 vim.keymap.set("v", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 
+
+--- LSP stuff
 -- Code action
 vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "Show LSP code actions" })
+vim.keymap.set("n", "<leader>tt", function() vim.lsp.buf.code_action() end, { desc = "Show LSP code actions" })
+
 
 --toggle relative vs absolute line numbers
 vim.keymap.set("n", "<leader>nn", function()
