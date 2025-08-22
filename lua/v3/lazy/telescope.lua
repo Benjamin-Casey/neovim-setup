@@ -28,6 +28,12 @@ return {
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, {
       desc = "Telescope help tags",
     })
+    vim.keymap.set("n", "<leader>fO", builtin.oldfiles, {
+      desc = "Telescope old files",
+    })
+    vim.keymap.set("n", "<leader>fj", builtin.jumplist, {
+      desc = "Telescope jumplist",
+    })
 
     -- Git integrations
     vim.keymap.set("n", "<leader>fc", builtin.git_commits, {
