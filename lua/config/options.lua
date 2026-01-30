@@ -30,6 +30,9 @@ vim.o.cursorline = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Persistent undo history
+vim.opt.undofile = true
+
 -- Disable comments on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
