@@ -36,21 +36,21 @@ return {
 		})
 
 		-- Git integrations
-		vim.keymap.set("n", "<leader>fc", builtin.git_commits, {
+		vim.keymap.set("n", "<leader>gc", builtin.git_commits, {
 			desc = "Telescope git commits",
 		})
-		vim.keymap.set("n", "<leader>fC", builtin.git_bcommits, {
+		vim.keymap.set("n", "<leader>gC", builtin.git_bcommits, {
 			desc = "Telescope git commits with respect to current buffer?",
 		})
-		vim.keymap.set("n", "<leader>fb", builtin.git_branches, {
+		vim.keymap.set("n", "<leader>gb", builtin.git_branches, {
 			desc = "Telescope git branches",
 		})
-		vim.keymap.set("n", "<leader>fs", builtin.git_status, {
+		vim.keymap.set("n", "<leader>gS", builtin.git_status, {
 			desc = "Telescope git status",
 		})
-		vim.keymap.set("n", "<leader>fS", builtin.git_stash, {
-			desc = "Telescope git stash",
-		})
+		-- vim.keymap.set("n", "<leader>gS", builtin.git_stash, {
+		-- 	desc = "Telescope git stash",
+		-- })
 
 		-- LSP Pickers
 		vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {
