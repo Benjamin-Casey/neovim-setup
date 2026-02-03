@@ -38,6 +38,12 @@ vim.keymap.set("n", "<leader>sN", "<C-w>W", { desc = "Go to previous window" })
 vim.keymap.set("n", "<leader>sp", "<cmd>bp<cr>", { desc = "Go to previous buffer" })
 vim.keymap.set("n", "<leader>sP", "<cmd>bn<cr>", { desc = "Go to next buffer" })
 
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to above window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to left window" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to below window" })
+
+
 -- tab management
 vim.keymap.set("n", "<leader>T", "<cmd>tabnew<CR>", { desc = "Create new tab" })
 vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close current tab" })             
