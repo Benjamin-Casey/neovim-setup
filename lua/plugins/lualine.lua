@@ -1,110 +1,139 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function()
-    -- -- Function to get the current mode indicator as a single character
-    local function mode()
-      -- Map of modes to their respective shorthand indicators
-      local mode_map = {
-        n = 'N',      -- Normal mode
-        i = 'I',      -- Insert mode
-        v = 'V',      -- Visual mode
-        [''] = 'V',   -- Visual block mode
-        V = 'V',      -- Visual line mode
-        c = 'C',      -- Command-line mode
-        no = 'N',     -- NInsert mode
-        s = 'S',      -- Select mode
-        S = 'S',      -- Select line mode
-        ic = 'I',     -- Insert mode (completion)
-        R = 'R',      -- Replace mode
-        Rv = 'R',     -- Virtual Replace mode
-        cv = 'C',     -- Command-line mode
-        ce = 'C',     -- Ex mode
-        r = 'R',      -- Prompt mode
-        rm = 'M',     -- More mode
-        ['r?'] = '?', -- Confirm mode
-        ['!'] = '!',  -- Shell mode
-        t = 'T',      -- Terminal mode
-      }
-      -- Return the mode shorthand or [UNKNOWN] if no match
-      return mode_map[vim.fn.mode()] or '[UNKNOWN]'
-    end
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		-- -- Function to get the current mode indicator as a single character
+		local function mode()
+			-- Map of modes to their respective shorthand indicators
+			local mode_map = {
+				n = "N", -- Normal mode
+				i = "I", -- Insert mode
+				v = "V", -- Visual mode
+				[""] = "V", -- Visual block mode
+				V = "V", -- Visual line mode
+				c = "C", -- Command-line mode
+				no = "N", -- NInsert mode
+				s = "S", -- Select mode
+				S = "S", -- Select line mode
+				ic = "I", -- Insert mode (completion)
+				R = "R", -- Replace mode
+				Rv = "R", -- Virtual Replace mode
+				cv = "C", -- Command-line mode
+				ce = "C", -- Ex mode
+				r = "R", -- Prompt mode
+				rm = "M", -- More mode
+				["r?"] = "?", -- Confirm mode
+				["!"] = "!", -- Shell mode
+				t = "T", -- Terminal mode
+			}
+			-- Return the mode shorthand or [UNKNOWN] if no match
+			return mode_map[vim.fn.mode()] or "[UNKNOWN]"
+		end
 
-    local diagnostics = {
-      "diagnostics",
-      sources = { "nvim_diagnostic" },
-      sections = { "error", "warn" },
-      symbols = { error = "E ", warn = "W " },
-      colored = true,
-      update_in_insert = false,
-      always_visible = false,
-      cond = function()
-        return vim.bo.filetype ~= "markdown"
-      end,
-    }
+		local filename = {
+			"filename",
+			file_status = true, -- Displays file status (readonly status, modified status)
+			newfile_status = false, -- Display new file status (new file means no write after created)
+			path = 1, -- 0: Just the filename
+			-- 1: Relative path
+			-- 2: Absolute path
+			-- 3: Absolute path, with tilde as the home directory
+			-- 4: Filename and parent dir, with tilde as the home directory
 
-    require('lualine').setup {
-      options = {
-        icons_enabled = true,
-        theme = 'auto',
-        -- component_separators = { left = '', right = '' },
-        -- section_separators = { left = '', right = '' },
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
-        disabled_filetypes = {
-          statusline = {},
-          winbar = {},
-        },
-        ignore_focus = {},
-        always_divide_middle = true,
-        always_show_tabline = true,
-        globalstatus = false,
-        refresh = {
-          statusline = 1000,
-          tabline = 1000,
-          winbar = 1000,
-          refresh_time = 16, -- ~60fps
-          events = {
-            'WinEnter',
-            'BufEnter',
-            'BufWritePost',
-            'SessionLoadPost',
-            'FileChangedShellPost',
-            'VimResized',
-            'Filetype',
-            'CursorMoved',
-            'CursorMovedI',
-            'ModeChanged',
-          },
-        }
-      },
-      sections = {
-        lualine_a = { mode },
-        lualine_b = { 'branch', 'diff', diagnostics },
-        lualine_c = { 'filename' },
-        lualine_x = {},
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { 'filename' },
-        lualine_x = { 'location' },
-        lualine_y = {},
-        lualine_z = {}
-      },
-      tabline = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = { "tabs" },
-      },
-      winbar = {},
-      inactive_winbar = {},
-      extensions = {}
-    }
-  end
+			shorting_target = 40, -- Shortens path to leave 40 spaces in the window
+			-- for other components. (terrible name, any suggestions?)
+			-- It can also be a function that returns
+			-- the value of `shorting_target` dynamically.
+			symbols = {
+				modified = "[+]", -- Text to show when the file is modified.
+				readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
+				unnamed = "[No Name]", -- Text to show for unnamed buffers.
+				newfile = "[New]", -- Text to show for newly created file before first write
+			},
+		}
+
+		local diagnostics = {
+			"diagnostics",
+			sources = { "nvim_diagnostic" },
+			sections = { "error", "warn" },
+			symbols = { error = "E ", warn = "W " },
+			colored = true,
+			update_in_insert = false,
+			always_visible = false,
+			cond = function()
+				return vim.bo.filetype ~= "markdown"
+			end,
+		}
+
+		require("lualine").setup({
+			options = {
+				icons_enabled = true,
+				theme = "auto",
+				-- component_separators = { left = '', right = '' },
+				-- section_separators = { left = '', right = '' },
+				component_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
+				disabled_filetypes = {
+					statusline = {},
+					winbar = {},
+				},
+				ignore_focus = {},
+				always_divide_middle = true,
+				always_show_tabline = true,
+				globalstatus = true,
+				refresh = {
+					statusline = 1000,
+					tabline = 1000,
+					winbar = 1000,
+					refresh_time = 16, -- ~60fps
+					events = {
+						"WinEnter",
+						"BufEnter",
+						"BufWritePost",
+						"SessionLoadPost",
+						"FileChangedShellPost",
+						"VimResized",
+						"Filetype",
+						"CursorMoved",
+						"CursorMovedI",
+						"ModeChanged",
+					},
+				},
+			},
+			sections = {
+				-- lualine_a = { mode },
+				-- lualine_b = { "branch", "diff", diagnostics },
+				-- lualine_c = { "filename" },
+				-- lualine_x = {},
+				-- lualine_y = { "progress" },
+				-- lualine_z = { "location" },
+
+				lualine_a = { "branch" },
+				lualine_b = { "diff", "diagnostics" },
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
+			},
+			inactive_sections = {
+				lualine_a = {},
+				lualine_b = {},
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {},
+			},
+			tabline = {
+				lualine_a = {},
+				lualine_b = { filename },
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = { "tabs" },
+			},
+			winbar = {},
+			inactive_winbar = {},
+			extensions = {},
+		})
+	end,
 }
