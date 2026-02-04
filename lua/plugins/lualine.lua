@@ -55,14 +55,31 @@ return {
 		local diagnostics = {
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
-			sections = { "error", "warn" },
-			symbols = { error = "E ", warn = "W " },
+			sections = { "error", "warn", "info", "hint" },
+			symbols = { error = "E ", warn = "W ", info = "I ", hint = "H " },
 			colored = true,
 			update_in_insert = false,
 			always_visible = false,
 			cond = function()
 				return vim.bo.filetype ~= "markdown"
 			end,
+		}
+
+		local lsp_status = {
+			"lsp_status",
+			icon = "", -- f013
+			symbols = {
+				-- Standard unicode symbols to cycle through for LSP progress:
+				spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+				-- Standard unicode symbol for when LSP is done:
+				done = "✓",
+				-- Delimiter inserted between LSP names:
+				separator = " ",
+			},
+			-- List of LSP names to ignore (e.g., `null-ls`):
+			ignore_lsp = {},
+			-- Display the LSP name
+			show_name = true,
 		}
 
 		require("lualine").setup({
@@ -109,9 +126,9 @@ return {
 				-- lualine_z = { "location" },
 
 				lualine_a = { "branch" },
-				lualine_b = { "diff", "diagnostics" },
-				lualine_c = {},
-				lualine_x = {},
+				lualine_b = { "diff" },
+				lualine_c = { diagnostics},
+				lualine_x = { lsp_status },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
