@@ -97,12 +97,12 @@ return {
 	},
 	-- {
 	-- 	"sindrets/diffview.nvim",
-		-- keys = {
-		-- 	{
-		-- 		"<leader>gs",
-		-- 		"<cmd>DiffviewOpen<CR>",
-		-- 	},
-		-- },
+	-- keys = {
+	-- 	{
+	-- 		"<leader>gs",
+	-- 		"<cmd>DiffviewOpen<CR>",
+	-- 	},
+	-- },
 	-- },
 	{
 		"tpope/vim-fugitive",
@@ -113,5 +113,8 @@ return {
 			-- Git blame on the current line
 			{ "<leader>gb", "<cmd>Git blame<CR>", desc = "Git Blame (Fugitive)" },
 		},
+	},
+	{
+		"barrettruth/diffs.nvim",
 	},
 }
