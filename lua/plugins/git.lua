@@ -95,26 +95,26 @@ return {
 			{ "<leader>gc", "<cmd>Gitsigns select_hunk<CR>", desc = "Gitsigns select hunk" },
 		},
 	},
-	-- {
-	-- 	"sindrets/diffview.nvim",
-	-- keys = {
-	-- 	{
-	-- 		"<leader>gs",
-	-- 		"<cmd>DiffviewOpen<CR>",
-	-- 	},
-	-- },
-	-- },
 	{
-		"tpope/vim-fugitive",
-		cmd = "Git",
+		"sindrets/diffview.nvim",
 		keys = {
-			-- Open a git status window
-			{ "<leader>gs", "<cmd>Git<CR>", desc = "Git Status (Fugitive)" },
-			-- Git blame on the current line
-			{ "<leader>gb", "<cmd>Git blame<CR>", desc = "Git Blame (Fugitive)" },
+			{
+				"<leader>gs",
+				"<cmd>DiffviewOpen<CR>",
+			},
 		},
 	},
-	{
-		"barrettruth/diffs.nvim",
-	},
+	-- {
+	-- 	"tpope/vim-fugitive",
+	-- 	cmd = "Git",
+	-- 	keys = {
+	-- 		-- Open a git status window
+	-- 		{ "<leader>gs", "<cmd>Git<CR>", desc = "Git Status (Fugitive)" },
+	-- 		-- Git blame on the current line
+	-- 		{ "<leader>gb", "<cmd>Git blame<CR>", desc = "Git Blame (Fugitive)" },
+	-- 	},
+	-- },
+	-- {
+	-- 	"barrettruth/diffs.nvim",
+	-- },
 }
