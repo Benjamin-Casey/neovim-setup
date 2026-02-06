@@ -28,10 +28,10 @@ vim.keymap.set("n", "<leader>d", '"_d')
 vim.keymap.set("v", "<leader>d", '"_d')
 
 -- window management
-vim.keymap.set("n", "<leader>sv", "<C-w>v<C-w>w", { desc = "Split window vertically" })   
-vim.keymap.set("n", "<leader>sh", "<C-w>s<C-w>w", { desc = "Split window horizontally" }) 
-vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })          
-vim.keymap.set("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" })     
+vim.keymap.set("n", "<leader>sv", "<C-w>v<C-w>w", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>sh", "<C-w>s<C-w>w", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+vim.keymap.set("n", "<leader>sc", "<cmd>close<CR>", { desc = "Close current split" })
 vim.keymap.set("n", "<leader>so", "<C-w>o", { desc = "Close all other windows" })
 vim.keymap.set("n", "<leader>sn", "<C-w>w", { desc = "Go to next window" })
 vim.keymap.set("n", "<leader>sN", "<C-w>W", { desc = "Go to previous window" })
@@ -46,10 +46,10 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to below window" })
 
 -- tab management
 vim.keymap.set("n", "<leader>T", "<cmd>tabnew<CR>", { desc = "Create new tab" })
-vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close current tab" })             
+vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 vim.keymap.set("n", "<leader>to", "<cmd>tabonly<CR>", { desc = "Closes all other tabs" })
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })                    
-vim.keymap.set("n", "<leader>tN", "<cmd>tabp<CR>", { desc = "Go to previous tab" })                
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
+vim.keymap.set("n", "<leader>tN", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Move current buffer to new tab" })
 
 
