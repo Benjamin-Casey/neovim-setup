@@ -1,46 +1,67 @@
 return {
-  -- gitsigns: essential inline git signs + hunk actions (with buffer-local mappings in on_attach)
+  {
+    {
+      'barrettruth/diffs.nvim',
+      init = function()
+        vim.g.diffs = {
+          -- neogit = true,
+          fugitive = true,
+        }
+      end,
+    }
+  },
   {
     "lewis6991/gitsigns.nvim",
-    lazy = false,
     opts = {
-      signs = {
-        add = { text = "┃" },
-        change = { text = "┃" },
-        delete = { text = "_" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "~" },
-        untracked = { text = "┆" },
+      signs                        = {
+        add          = { text = '┃' },
+        change       = { text = '┃' },
+        delete       = { text = '_' },
+        topdelete    = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked    = { text = '┆' },
       },
-      signcolumn = true,
-      numhl = false,
-      linehl = false,
-      word_diff = false,
-      watch_gitdir = { follow_files = true },
-      auto_attach = true,
-      attach_to_untracked = false,
-      current_line_blame = false,
-      current_line_blame_opts = {
+      signs_staged                 = {
+        add          = { text = '┃' },
+        change       = { text = '┃' },
+        delete       = { text = '_' },
+        topdelete    = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked    = { text = '┆' },
+      },
+      signs_staged_enable          = true,
+      signcolumn                   = true,  -- Toggle with `:Gitsigns toggle_signs`
+      numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
+      linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
+      word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
+      watch_gitdir                 = {
+        follow_files = true
+      },
+      auto_attach                  = true,
+      attach_to_untracked          = false,
+      current_line_blame           = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+      current_line_blame_opts      = {
         virt_text = true,
-        virt_text_pos = "eol",
-        delay = 50,
+        virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+        delay = 1000,
         ignore_whitespace = false,
         virt_text_priority = 100,
         use_focus = true,
       },
-      current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
-      sign_priority = 6,
-      update_debounce = 100,
-      max_file_length = 40000,
-      preview_config = {
-        border = "single",
-        style = "minimal",
-        relative = "cursor",
+      current_line_blame_formatter = '<author>, <author_time:%R> - <summary>',
+      sign_priority                = 6,
+      update_debounce              = 100,
+      status_formatter             = nil,   -- Use default
+      max_file_length              = 40000, -- Disable if file is longer than this (in lines)
+      preview_config               = {
+        -- Options passed to nvim_open_win
+        style = 'minimal',
+        relative = 'cursor',
         row = 0,
-        col = 1,
+        col = 1
       },
     },
-    config = function(_, opts)
+    config = function()
       require('gitsigns').setup {
         on_attach = function(bufnr)
           local gitsigns = require('gitsigns')
@@ -103,18 +124,11 @@ return {
           map('n', '<leader>tw', gitsigns.toggle_word_diff)
 
           -- Text object
-          -- map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
+          map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
         end
       }
-    end,
-    -- A few safe global keys (non-buffer-local). Keep repo-level commands on <leader>g and hunk commands under <leader>h
-    keys = {
-      { "<leader>gD", "<cmd>Gitsigns diffthis<CR>",                  desc = "Gitsigns diff hunk" },
-      { "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<CR>", desc = "Toggle current line blame" },
-    },
+    end
   },
-
-  -- diffview: nice commit/branch/file diffs and history
   {
     "sindrets/diffview.nvim",
     cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
@@ -125,26 +139,32 @@ return {
     },
     opts = {
       use_icons = true,
-      enhanced_diff_hl = true,
+      -- enhanced_diff_hl = true,
+      -- enhanced_diff_hl = false,
       view = {
         default = { winbar_info = false },
       },
     },
   },
-
-  -- fugitive: battle-tested git porcelain (lazy-load on :Git)
+  -- {
+  --   "NeogitOrg/neogit",
+  --   lazy = true,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim", -- required
+  --     "sindrets/diffview.nvim",
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  --   cmd = "Neogit",
+  --   keys = {
+  --     { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+  --   }
+  -- }
   {
     "tpope/vim-fugitive",
     cmd = { "Git", "G" },
     keys = {
-      { "<leader>gs", "<cmd>Git<CR>",       desc = "Git status (Fugitive)" },
+      { "<leader>gg", "<cmd>Git<CR>",       desc = "Git status (Fugitive)" },
       { "<leader>gB", "<cmd>Git blame<CR>", desc = "Git blame (Fugitive)" },
     },
-  },
-
-  -- small diff helpers plugin (optional)
-  {
-    "barrettruth/diffs.nvim",
-    cmd = { "Diffs" },
   },
 }

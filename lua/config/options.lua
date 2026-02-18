@@ -7,7 +7,6 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-
 vim.opt.wrap = false
 
 vim.opt.incsearch = true
@@ -32,6 +31,9 @@ vim.opt.smartcase = true
 
 -- Persistent undo history
 vim.opt.undofile = true
+
+vim.o.swapfile = false
+vim.opt.clipboard = "unnamed"
 
 -- Disable comments on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
