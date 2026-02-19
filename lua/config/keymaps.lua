@@ -55,9 +55,6 @@ vim.keymap.set("v", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 vim.keymap.set("n", "<leader>ca", function()
 	vim.lsp.buf.code_action()
 end, { desc = "Show LSP code actions" })
-vim.keymap.set("n", "<leader>tt", function()
-	vim.lsp.buf.code_action()
-end, { desc = "Show LSP code actions" })
 
 --toggle relative vs absolute line numbers
 vim.keymap.set("n", "<leader>nn", function()
