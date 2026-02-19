@@ -163,7 +163,7 @@ return {
     "tpope/vim-fugitive",
     cmd = { "Git", "G" },
     keys = {
-      { "<leader>gg", "<cmd>Git<CR>",       desc = "Git status (Fugitive)" },
+      { "<leader>gg", "<cmd>vert Git<CR>",       desc = "Git status (Fugitive)" },
       { "<leader>gB", "<cmd>Git blame<CR>", desc = "Git blame (Fugitive)" },
     },
   },

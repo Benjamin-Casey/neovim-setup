@@ -35,6 +35,13 @@ vim.opt.undofile = true
 vim.o.swapfile = false
 vim.opt.clipboard = "unnamed"
 
+-- Fold settings
+vim.opt.fillchars = { fold = " " }
+vim.opt.foldmethod = "indent"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.g.markdown_folding = 1
+
 -- Disable comments on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
