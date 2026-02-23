@@ -42,6 +42,9 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.g.markdown_folding = 1
 
+-- Disable tabline
+vim.opt.showtabline = 0
+
 -- Disable comments on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")

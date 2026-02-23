@@ -65,7 +65,20 @@ return {
 			-- StatusLine = { fg = "love", bg = "love", blend = 15 },
 			-- VertSplit = { fg = "muted", bg = "muted" },
 			-- Visual = { fg = "base", bg = "text", inherit = false },
-      BlinkCmpMenuSelection = { fg = "base", bg = "rose" }
+
+			-- Blink CMP HGs
+			BlinkCmpMenuSelection = { fg = "base", bg = "rose" },
+
+			-- Telescope HGs
+			TelescopeNormal = { fg = "subtle", bg = "overlay" },
+			TelescopeBorder = { fg = "overlay", bg = "overlay" },
+			TelescopePromptNormal = { fg = "text", bg = "surface" },
+			TelescopePromptBorder = { fg = "surface", bg = "surface" },
+			TelescopeSelection = { fg = "none", bg = "highlight_low" },
+			TelescopePromptTitle = { fg = "base", bg = "rose" },
+			TelescopeResultsTitle = { fg = "base", bg = "rose" },
+			TelescopePreviewTitle = { fg = "base", bg = "rose" },
+			TelescopeMatching = { fg = "rose", bg = "none" },
 		},
 	},
 }
