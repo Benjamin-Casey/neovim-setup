@@ -65,6 +65,7 @@ return {
 			-- StatusLine = { fg = "love", bg = "love", blend = 15 },
 			-- VertSplit = { fg = "muted", bg = "muted" },
 			-- Visual = { fg = "base", bg = "text", inherit = false },
+      BlinkCmpMenuSelection = { fg = "base", bg = "rose" }
 		},
 	},
 }
