@@ -4,5 +4,8 @@ require("config.options")
 require("config.keymaps")
 require("config.lazy")
 
-vim.cmd("colorscheme rose-pine")
 
+require("config.statusline")
+require("config.tabline")
+
+vim.cmd("colorscheme rose-pine")

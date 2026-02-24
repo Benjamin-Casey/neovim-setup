@@ -79,6 +79,11 @@ return {
 			TelescopeResultsTitle = { fg = "base", bg = "rose" },
 			TelescopePreviewTitle = { fg = "base", bg = "rose" },
 			TelescopeMatching = { fg = "rose", bg = "none" },
+
+			-- Status + tabline
+			StatusLine = { fg = "love", bg = "love", blend = 10 },
+			TabLine = { fg = "love", bg = "love", blend = 10 },
+			TabLineSel = { fg = "love", bg = "love", blend = 20 },
 		},
 	},
 }
