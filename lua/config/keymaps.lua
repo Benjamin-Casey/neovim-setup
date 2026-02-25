@@ -59,7 +59,7 @@ vim.keymap.set("n", "<leader>ca", function()
 	vim.lsp.buf.code_action()
 end, { desc = "Show LSP code actions" })
 
-vim.keymap.set("n", "gD", function()
+vim.keymap.set("n", "gd", function()
 	if next(vim.lsp.get_clients({ bufnr = 0 })) ~= nil then
 		vim.lsp.buf.definition()
 	else
