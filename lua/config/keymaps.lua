@@ -46,15 +46,58 @@ vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 vim.keymap.set("n", "<leader>tN", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Move current buffer to new tab" })
 
+-- QF List nav
+vim.keymap.set("n", "]q", "<cmd>cnext<CR>", { desc = "Go to next quickfix item" })
+vim.keymap.set("n", "[q", "<cmd>cprevious<CR>", { desc = "Go to previous quickfix item" })
+
 -- No highlight
 vim.keymap.set("n", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 vim.keymap.set("v", "<leader>nh", "<cmd>noh<cr>", { desc = "No highlight" })
 
---- LSP stuff
--- Code action
+--- LSP
 vim.keymap.set("n", "<leader>ca", function()
 	vim.lsp.buf.code_action()
 end, { desc = "Show LSP code actions" })
+
+vim.keymap.set("n", "gD", function()
+	if next(vim.lsp.get_clients({ bufnr = 0 })) ~= nil then
+		vim.lsp.buf.definition()
+	else
+		vim.cmd("normal! gd")
+	end
+end, { noremap = true, silent = true, desc = "Go to LSP definition" })
+
+vim.keymap.set("n", "gt", function()
+	if next(vim.lsp.get_clients({ bufnr = 0 })) ~= nil then
+		vim.lsp.buf.type_definition()
+	else
+		vim.notify("No attached LSP!")
+	end
+end, { noremap = true, silent = true, desc = "Go to LSP type definition" })
+
+vim.keymap.set("n", "gR", function()
+	if next(vim.lsp.get_clients({ bufnr = 0 })) ~= nil then
+		vim.lsp.buf.references()
+	else
+		vim.notify("No attached LSP!")
+	end
+end, { noremap = true, silent = true, desc = "Go to LSP references" })
+
+vim.keymap.set("n", "K", function()
+	if next(vim.lsp.get_clients({ bufnr = 0 })) ~= nil then
+		vim.lsp.buf.hover()
+	else
+		vim.cmd("normal! K")
+	end
+end, { noremap = true, silent = true, desc = "LSP hover" })
+
+vim.keymap.set("n", "<C-K>", function()
+	if next(vim.lsp.get_clients({ bufnr = 0 })) ~= nil then
+		vim.lsp.buf.signature_help()
+	else
+		vim.cmd("normal! K")
+	end
+end, { noremap = true, silent = true, desc = "LSP signature_help" })
 
 --toggle relative vs absolute line numbers
 vim.keymap.set("n", "<leader>nn", function()

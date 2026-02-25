@@ -33,7 +33,6 @@ vim.opt.smartcase = true
 vim.opt.undofile = true
 
 vim.o.swapfile = false
-vim.opt.clipboard = "unnamed"
 
 -- Fold settings
 vim.opt.fillchars = { fold = " " }
