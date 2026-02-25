@@ -84,6 +84,9 @@ return {
 			StatusLine = { fg = "love", bg = "love", blend = 10 },
 			TabLine = { fg = "love", bg = "love", blend = 10 },
 			TabLineSel = { fg = "love", bg = "love", blend = 20 },
+
+			CmdLine = { fg = "love", bg = "love", blend = 10 },
+			MsgArea = { fg = "love", bg = "love", blend = 10 },
 		},
 	},
 }
