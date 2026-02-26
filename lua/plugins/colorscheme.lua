@@ -90,3 +90,6 @@ return {
 		},
 	},
 }
+
+-- Others:
+-- https://github.com/mcauley-penney/techbase.nvim

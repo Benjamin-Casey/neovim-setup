@@ -75,7 +75,7 @@ return {
 
 		cmdline = {
 			keymap = { preset = "inherit" },
-			completion = { menu = { auto_show = true } },
+			completion = { menu = { auto_show = false } },
 		},
 	},
 	opts_extend = { "sources.default" },
