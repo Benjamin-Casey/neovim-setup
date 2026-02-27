@@ -23,12 +23,6 @@ vim.keymap.set("v", "<leader>d", '"_d')
 -- We don't want to press Q?
 vim.keymap.set("n", "Q", "<nop>")
 
--- Save current file
-vim.keymap.set("n", "<Leader>w", "<cmd>w!<CR>", s)
-
--- Close nvim
-vim.keymap.set("n", "<Leader>q", "<cmd>q<CR>", s)
-
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v<C-w>w", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s<C-w>w", { desc = "Split window horizontally" })
