@@ -2,6 +2,7 @@ M = {}
 
 local get_diagnostic_count = function(severity)
 	if not rawget(vim, "lsp") then
+
 		return 0
 	end
 
@@ -21,7 +22,7 @@ M.get_warnings_component = function()
 		return ""
 	end
 
-	return "•" .. warning_count
+	return "W " .. warning_count
 end
 
 M.get_errors_component = function()
@@ -31,7 +32,7 @@ M.get_errors_component = function()
 		return ""
 	end
 
-	return "•" .. error_count
+	return "E " .. error_count
 end
 
 M.get_infos_component = function()
@@ -41,7 +42,7 @@ M.get_infos_component = function()
 		return ""
 	end
 
-	return "•" .. info_count
+	return "I " .. info_count
 end
 
 M.get_hints_component = function()
@@ -51,7 +52,7 @@ M.get_hints_component = function()
 		return ""
 	end
 
-	return "•" .. hint_count
+	return "H " .. hint_count
 end
 
 return M

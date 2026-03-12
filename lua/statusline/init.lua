@@ -27,7 +27,7 @@ function StatusLine()
 		components.get_component("StatusErrors", errors),
 		components.get_component("StatusWarnings", warnings),
 		components.get_component("StatusInfos", infos),
-		components.get_component("StatusHints", hints),
+		-- components.get_component("StatusHints", hints),
 		components.get_component_separator(),
 		components.get_component("StatusSaved", saved),
 		components.get_component("StatusSpotify", song, true),
