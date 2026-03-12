@@ -46,37 +46,35 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- Statusline
-vim.opt.laststatus = 3
-vim.opt.statusline = " %f %M %= %l:%c %p%% ♥ "
+-- vim.opt.laststatus = 3
+-- vim.opt.statusline = " %f %M %= %l:%c %p%% ♥ "
 
 -- Tabline
 function _G.simple_tabline()
-	local s = ""
+  local s = ""
 
-	for i = 1, vim.fn.tabpagenr("$") do
-		local winnr = vim.fn.tabpagewinnr(i)
-		local buflist = vim.fn.tabpagebuflist(i)
-		local bufnr = buflist[winnr]
-		local name = vim.fn.bufname(bufnr)
-		local filename = name ~= "" and vim.fn.fnamemodify(name, ":t") or "[No Name]"
+  for i = 1, vim.fn.tabpagenr("$") do
+    local winnr = vim.fn.tabpagewinnr(i)
+    local buflist = vim.fn.tabpagebuflist(i)
+    local bufnr = buflist[winnr]
+    local name = vim.fn.bufname(bufnr)
+    local filename = name ~= "" and vim.fn.fnamemodify(name, ":t") or "[No Name]"
 
-		if i == vim.fn.tabpagenr() then
-			s = s .. "%#TabLineSel#"
-		else
-			s = s .. "%#TabLine#"
-		end
+    if i == vim.fn.tabpagenr() then
+      s = s .. "%#TabLineSel#"
+    else
+      s = s .. "%#TabLine#"
+    end
 
-		s = s .. " " .. i .. ": " .. filename .. " "
-	end
+    s = s .. " " .. i .. ": " .. filename .. " "
+  end
 
-	s = s .. "%#TabLineFill#%T"
-	return s
+  s = s .. "%#TabLineFill#%T"
+  return s
 end
 
 vim.o.tabline = "%!v:lua.simple_tabline()"
 vim.o.showtabline = 1
 
-
--- Command line
-
-vim.o.cmdheight = 0
+-- Winbar
+vim.opt.winbar = "%#WinBar# %f %m "

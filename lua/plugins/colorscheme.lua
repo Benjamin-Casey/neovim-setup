@@ -85,8 +85,8 @@ return {
 			TabLine = { fg = "love", bg = "love", blend = 10 },
 			TabLineSel = { fg = "love", bg = "love", blend = 20 },
 
-			CmdLine = { fg = "love", bg = "love", blend = 10 },
-			MsgArea = { fg = "love", bg = "love", blend = 10 },
+			-- CmdLine = { fg = "love", bg = "love", blend = 10 },
+			-- MsgArea = { fg = "love", bg = "love", blend = 10 },
 		},
 	},
 }

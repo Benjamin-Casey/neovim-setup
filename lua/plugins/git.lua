@@ -4,8 +4,10 @@ return {
       'barrettruth/diffs.nvim',
       init = function()
         vim.g.diffs = {
-          -- neogit = true,
-          fugitive = true,
+          integrations = {
+            -- neogit = true,
+            fugitive = true,
+          }
         }
       end,
     }
@@ -163,7 +165,7 @@ return {
     "tpope/vim-fugitive",
     cmd = { "Git", "G" },
     keys = {
-      { "<leader>gg", "<cmd>vert Git<CR>",       desc = "Git status (Fugitive)" },
+      { "<leader>gg", "<cmd>vert Git<CR>",  desc = "Git status (Fugitive)" },
       { "<leader>gB", "<cmd>Git blame<CR>", desc = "Git blame (Fugitive)" },
     },
   },

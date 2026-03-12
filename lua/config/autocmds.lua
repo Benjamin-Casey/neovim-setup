@@ -28,27 +28,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Keep the cursor position when yanking
-local cursorPreYank
-
-vim.keymap.set({ "n", "x" }, "y", function()
-	cursorPreYank = vim.api.nvim_win_get_cursor(0)
-	return "y"
-end, { expr = true })
-
-vim.keymap.set("n", "Y", function()
-	cursorPreYank = vim.api.nvim_win_get_cursor(0)
-	return "y$"
-end, { expr = true })
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		if vim.v.event.operator == "y" and cursorPreYank then
-			vim.api.nvim_win_set_cursor(0, cursorPreYank)
-		end
-	end,
-})
-
 vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI", "WinScrolled" }, {
 	desc = "Fix scrolloff when you are at the EOF",
 	group = vim.api.nvim_create_augroup("ScrollEOF", { clear = true }),
@@ -74,25 +53,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "help",
 	command = "wincmd L",
 })
-
--- Hide cmdline unless typing a command
--- vim.api.nvim_create_autocmd('CmdlineEnter', {
---     group = vim.api.nvim_create_augroup(
---         'gmr_cmdheight_1_on_cmdlineenter',
---         { clear = true }
---     ),
---     desc = 'Don\'t hide the status line when typing a command',
---     command = ':set cmdheight=1',
--- })
-
--- vim.api.nvim_create_autocmd('CmdlineLeave', {
---     group = vim.api.nvim_create_augroup(
---         'gmr_cmdheight_0_on_cmdlineleave',
---         { clear = true }
---     ),
---     desc = 'Hide cmdline when not typing a command',
---     command = ':set cmdheight=0',
--- })
 
 -- Hide notification when saving a file
 vim.api.nvim_create_autocmd("BufWritePost", {

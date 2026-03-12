@@ -91,14 +91,6 @@ vim.keymap.set("n", "K", function()
 	end
 end, { noremap = true, silent = true, desc = "LSP hover" })
 
-vim.keymap.set("n", "<C-K>", function()
-	if next(vim.lsp.get_clients({ bufnr = 0 })) ~= nil then
-		vim.lsp.buf.signature_help()
-	else
-		vim.cmd("normal! K")
-	end
-end, { noremap = true, silent = true, desc = "LSP signature_help" })
-
 --toggle relative vs absolute line numbers
 vim.keymap.set("n", "<leader>nn", function()
 	if vim.wo.relativenumber then
