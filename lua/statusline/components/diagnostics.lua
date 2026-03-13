@@ -1,58 +1,57 @@
 M = {}
 
 local get_diagnostic_count = function(severity)
-	if not rawget(vim, "lsp") then
+  if not rawget(vim, "lsp") then
+    return 0
+  end
 
-		return 0
-	end
+  local count = vim.diagnostic.count(0, { severity = severity })[severity]
 
-	local count = vim.diagnostic.count(0, { severity = severity })[severity]
+  if count == nil then
+    return 0
+  end
 
-	if count == nil then
-		return 0
-	end
-
-	return count
+  return count
 end
 
 M.get_warnings_component = function()
-	local warning_count = get_diagnostic_count(vim.diagnostic.severity.WARN)
+  local warning_count = get_diagnostic_count(vim.diagnostic.severity.WARN)
 
-	if warning_count == 0 then
-		return ""
-	end
+  if warning_count == 0 then
+    return ""
+  end
 
-	return "W " .. warning_count
+  return "%#GitSignsChange#W " .. warning_count
 end
 
 M.get_errors_component = function()
-	local error_count = get_diagnostic_count(vim.diagnostic.severity.ERROR)
+  local error_count = get_diagnostic_count(vim.diagnostic.severity.ERROR)
 
-	if error_count == 0 then
-		return ""
-	end
+  if error_count == 0 then
+    return ""
+  end
 
-	return "E " .. error_count
+  return "%#GitSignsDelete#E " .. error_count
 end
 
 M.get_infos_component = function()
-	local info_count = get_diagnostic_count(vim.diagnostic.severity.INFO)
+  local info_count = get_diagnostic_count(vim.diagnostic.severity.INFO)
 
-	if info_count == 0 then
-		return ""
-	end
+  if info_count == 0 then
+    return ""
+  end
 
-	return "I " .. info_count
+  return "%#GitSignsAdd#I " .. info_count
 end
 
 M.get_hints_component = function()
-	local hint_count = get_diagnostic_count(vim.diagnostic.severity.HINT)
+  local hint_count = get_diagnostic_count(vim.diagnostic.severity.HINT)
 
-	if hint_count == 0 then
-		return ""
-	end
+  if hint_count == 0 then
+    return ""
+  end
 
-	return "H " .. hint_count
+  return "H " .. hint_count
 end
 
 return M
