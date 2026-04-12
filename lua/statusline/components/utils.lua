@@ -19,6 +19,27 @@ local function get_mode_group(mode)
 		["!"] = "s",
 		["t"] = "t",
 	}
+  local verbose_groups = {
+    n = "normal",
+    no = "op-pending",
+    i = "insert",
+    v = "visual",
+    V = "visual-line",
+    [""] = "visual-block", -- Ctrl-V
+    c = "command",
+    cv = "vim-ex",
+    ce = "normal-ex",
+    s = "select",
+    S = "select-line",
+    [""] = "select-block", -- Ctrl-S
+    R = "replace",
+    Rv = "virtual-replace",
+    r = "hit-enter",
+    rm = "more-prompt",
+    ["r?"] = "confirm",
+    ["!"] = "shell",
+    t = "terminal",
+}
 
 	local group = groups[mode] or "unknown"
 
