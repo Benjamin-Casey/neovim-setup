@@ -17,11 +17,11 @@ return {
     vim.api.nvim_create_autocmd("BufReadPost", {
       pattern = "*",
       callback = function()
-        -- can start a specific treesitter on a specific buffer also
-        -- vim.treesitter.start(0, "c")
-        vim.treesitter.start()
+        -- buftype "" means it's a normal file on disk
+        if vim.bo.buftype == "" then
+          pcall(vim.treesitter.start)
+        end
       end,
-      once = true,
     })
   end
 }
