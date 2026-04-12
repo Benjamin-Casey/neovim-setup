@@ -85,47 +85,48 @@ return {
     },
   },
   {
-  'everviolet/nvim',
-  name = 'evergarden',
-  priority = 1000,
-  opts = {
-    theme = {
-      variant = 'fall',
-      accent = 'green',
-    },
-    editor = {
-      transparent_background = false,
-      sign = { color = 'none' },
-      float = {
-        color = 'mantle',
-        solid_border = false,
+    'everviolet/nvim',
+    name = 'evergarden',
+    priority = 1000,
+    opts = {
+      theme = {
+        variant = 'fall',
+        accent = 'green',
       },
-      completion = {
-        color = 'surface0',
+      editor = {
+        transparent_background = false,
+        sign = { color = 'none' },
+        float = {
+          color = 'mantle',
+          solid_border = false,
+        },
+        completion = {
+          color = 'surface0',
+        },
       },
-    },
-    -- Adding the highlight overrides here
-    overrides = function(palette)
-      return {
-        -- Blink CMP HGs (Mapping Rose -> Aqua/Green)
-        BlinkCmpMenuSelection = { fg = palette.base, bg = palette.aqua, bold = true },
+      -- Adding the highlight overrides here
+      overrides = function(palette)
+        return {
+          -- Blink CMP HGs (Mapping Rose -> Aqua/Green)
+          BlinkCmpMenuSelection = { fg = palette.base, bg = palette.aqua, bold = true },
 
-        -- Telescope HGs
-        TelescopeNormal = { fg = palette.subtext0, bg = palette.surface0 },
-        TelescopeBorder = { fg = palette.surface0, bg = palette.surface0 },
-        TelescopePromptNormal = { fg = palette.text, bg = palette.surface1 },
-        TelescopePromptBorder = { fg = palette.surface1, bg = palette.surface1 },
-        TelescopeSelection = { fg = palette.none, bg = palette.surface2 },
-        TelescopePromptTitle = { fg = palette.base, bg = palette.green },
-        TelescopeResultsTitle = { fg = palette.base, bg = palette.green },
-        TelescopePreviewTitle = { fg = palette.base, bg = palette.green },
+          -- Telescope HGs
+          TelescopeNormal = { fg = palette.subtext0, bg = palette.surface0 },
+          TelescopeBorder = { fg = palette.surface0, bg = palette.surface0 },
+          TelescopePromptNormal = { fg = palette.text, bg = palette.surface1 },
+          TelescopePromptBorder = { fg = palette.surface1, bg = palette.surface1 },
+          TelescopeSelection = { fg = palette.none, bg = palette.surface2 },
+          TelescopePromptTitle = { fg = palette.base, bg = palette.green },
+          TelescopeResultsTitle = { fg = palette.base, bg = palette.green },
+          TelescopePreviewTitle = { fg = palette.base, bg = palette.green },
 
-        StatusLine = { fg = palette.subtext0, bg = "None" },
-
-      }
-    end,
+          StatusLine = { fg = palette.purple, bg = "None" },
+          CmdLine = { fg = palette.text, bg = "None" },
+          MsgArea = { fg = palette.text, bg = "None" },
+        }
+      end,
+    }
   }
-}
 }
 
 -- Others:

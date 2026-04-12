@@ -18,7 +18,7 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "88"
+-- vim.opt.colorcolumn = "88"
 
 -- Mode doesn't need to be shown due to lualine
 vim.opt.showmode = false
