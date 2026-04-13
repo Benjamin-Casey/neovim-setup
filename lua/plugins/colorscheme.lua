@@ -130,6 +130,62 @@ return {
       end,
     }
   },
+  {
+    "ember-theme/nvim",
+    name = "ember",
+    priority = 1000,
+    config = function()
+      require("ember").setup({
+        variant = "ember",
+        on_highlights = function(highlights, theme)
+          -- Hex colors from your provided palette
+          local bg                         = "#1c1b19" -- H45  S6%  L10%
+          local bg_alt                     = "#242320" -- H30  S4%  L13% — Emacs hl-line value
+          local base0                      = "#151412" -- H40  S8%  L7%
+          local base1                      = "#1c1b19" -- H45  S6%  L10%
+          local base2                      = "#252422" -- H40  S5%  L14%
+          local base3                      = "#2e2d2a" -- H42  S5%  L17%
+          local base4                      = "#3e3c38" -- H42  S5%  L23%
+          local base5                      = "#585550" -- H40  S5%  L33%
+          local base6                      = "#706c61" -- H43  S8%  L41%
+          local base7                      = "#908a7e" -- H42  S8%  L53%
+          local base8                      = "#b8b0a0" -- H40  S12% L68%
+          local fg                         = "#d8d0c0" -- H42  S16% L82%
+          local fg_alt                     = "#b0a898" -- H38  S12% L64%
+
+          local coral                      = "#e08060" -- H18  S55% L63%  — hero
+          local orange                     = "#c09058" -- H30  S42% L55%
+          local gold                       = "#c8b468" -- H45  S42% L60%
+          local olive                      = "#8a9868" -- H78  S22% L50%
+          local sage                       = "#80a090" -- H150 S14% L56%
+          local steel                      = "#7890a0" -- H205 S18% L55%
+          local rose                       = "#b07878" -- H0   S25% L58%
+          local mauve                      = "#988090" -- H315 S12% L55%
+
+          -- Blink CMP (Mapping Rose -> Coral)
+          highlights.BlinkCmpMenuSelection = { fg = bg, bg = coral }
+
+          -- Telescope HGs
+          highlights.TelescopePromptNormal = { fg = fg, bg = bg_alt }
+          highlights.TelescopePromptBorder = { fg = bg_alt, bg = bg_alt }
+          highlights.TelescopeSelection    = { bg = bg_alt }
+
+          -- Titles using Coral
+          highlights.TelescopePromptTitle  = { fg = bg, bg = coral }
+          highlights.TelescopeResultsTitle = { fg = bg, bg = coral }
+          highlights.TelescopePreviewTitle = { fg = bg, bg = coral }
+
+          -- StatusLine & UI
+          highlights.StatusLine            = { fg = mauve, bg = "NONE" }
+          highlights.StatusMode            = { fg = bg, bg = coral, bold = true }
+          highlights.StatusBranch          = { fg = coral, bg = bg_alt }
+
+          highlights.CmdLine               = { fg = fg, bg = "NONE" }
+          highlights.MsgArea               = { fg = fg, bg = "NONE" }
+        end,
+      })
+    end,
+  }
 }
 
 -- Others:
