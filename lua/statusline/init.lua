@@ -20,8 +20,9 @@ function StatusLine()
 	local song = spotify.get_spotify_component()
 
 	return table.concat({
-    " ",
+		components.get_component("StatusMode", " ", 1),
 		components.get_component("StatusMode", mode),
+		components.get_component("StatusBranch", " ", 1),
 		components.get_component("StatusBranch", branch),
 		components.get_component("StatusBranchChanges", changes),
 		components.get_component("StatusErrors", errors),

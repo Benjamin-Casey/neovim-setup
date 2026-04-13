@@ -123,6 +123,8 @@ return {
           StatusLine = { fg = palette.purple, bg = "None" },
           CmdLine = { fg = palette.text, bg = "None" },
           MsgArea = { fg = palette.text, bg = "None" },
+
+          StatusMode = { fg = palette.base, bg = palette.green },
         }
       end,
     }

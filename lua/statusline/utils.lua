@@ -1,6 +1,6 @@
 M = {}
 
-STATUS_LINE_GAP = 2
+STATUS_LINE_GAP = 1
 
 M.get_component = function(tag, value, no_gap)
 	if value == "" then
