@@ -121,14 +121,15 @@ return {
           TelescopePreviewTitle = { fg = palette.base, bg = palette.green },
 
           StatusLine = { fg = palette.purple, bg = "None" },
+          StatusMode = { fg = palette.base, bg = palette.green },
+          StatusBranch = { fg = palette.green, bg = palette.surface1 },
           CmdLine = { fg = palette.text, bg = "None" },
           MsgArea = { fg = palette.text, bg = "None" },
 
-          StatusMode = { fg = palette.base, bg = palette.green },
         }
       end,
     }
-  }
+  },
 }
 
 -- Others:

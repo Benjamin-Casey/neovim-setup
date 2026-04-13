@@ -24,6 +24,7 @@ function StatusLine()
 		components.get_component("StatusMode", mode),
 		components.get_component("StatusBranch", " ", 1),
 		components.get_component("StatusBranch", branch),
+		components.get_component("StatusBranchChanges", " ", 1),
 		components.get_component("StatusBranchChanges", changes),
 		components.get_component("StatusErrors", errors),
 		components.get_component("StatusWarnings", warnings),
