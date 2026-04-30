@@ -6,6 +6,6 @@ require("config.autocmds")
 require("statusline")
 require("config.lazy")
 
--- vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme evergarden")
-vim.cmd("colorscheme ember")
+-- vim.cmd("colorscheme ember")
