@@ -145,6 +145,9 @@ return {
       -- enhanced_diff_hl = false,
       view = {
         default = { winbar_info = false },
+        merge_tool = {
+          layout = "diff3_mixed"
+        },
       },
     },
   },
