@@ -8,7 +8,7 @@ return {
   },
   config = function()
     local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>F", builtin.builtin, { desc = "Telescope resume last picker" })
+    vim.keymap.set("n", "<leader>F", builtin.resume, { desc = "Telescope resume last picker" })
 
     -- Standard
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
