@@ -185,8 +185,45 @@ return {
         end,
       })
     end,
+  },
+  {
+    'kungfusheep/mfd.nvim',
+    lazy = false,
+    priority = 1000,
+    -- config = function()
+    --   vim.cmd('colorscheme mfd-stealth')
+    -- end,
+  },
+  {
+    'sainnhe/gruvbox-material',
+    lazy = false,
+    priority = 1000,
+    -- config = function()
+    --   vim.cmd('colorscheme mfd-stealth')
+    -- end,
+  },
+  {
+    'savq/melange-nvim',
+  },
+  {
+    'nyoom-engineering/oxocarbon.nvim'
+  },
+  {
+    'lokaltog/vim-monotone'
+  },
+  {
+    "mcauley-penney/techbase.nvim",
+    opts = {
+      italic_comments = false,
+
+      -- set to true to make the background, floating windows, statusline,
+      -- signcolumn, foldcolumn, and tabline transparent
+      transparent = false,
+
+      -- allows you to override any highlight group for finer-grained control
+      hl_overrides = {},
+    },
+    init = function() vim.cmd.colorscheme("techbase") end,
+    priority = 1000
   }
 }
-
--- Others:
--- https://github.com/mcauley-penney/techbase.nvim
