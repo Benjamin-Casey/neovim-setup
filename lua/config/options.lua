@@ -25,6 +25,7 @@ vim.opt.showmode = false
 
 -- Change linenumber color
 vim.o.cursorline = true
+vim.api.nvim_set_hl(0, 'LineNr', { italic = true })
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
