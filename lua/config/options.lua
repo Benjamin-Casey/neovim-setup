@@ -79,3 +79,6 @@ vim.o.showtabline = 1
 
 -- Winbar
 vim.opt.winbar = "%#WinBar# %f %m "
+
+-- Remove ~ from line nums
+vim.opt.fillchars:append({ eob = " " })
