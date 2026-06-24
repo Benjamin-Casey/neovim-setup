@@ -33,7 +33,7 @@ return {
       local status_text = stats == "0" and " Clean" or ("󰚰 " .. stats .. " pending changes")
 
       -- Get last 3 commit messages
-      local commits = run_cmd("git log -5 --oneline --format='  %-7h │ %s'")
+      local commits = run_cmd("git log -5 --oneline --format='  - %s'")
 
       -- Format the dashboard output
       local lines = {
