@@ -28,6 +28,9 @@ return {
         },
       },
     })
+    vim.lsp.config("clangd", {
+      cmd = { "clangd", "--function-arg-placeholders=false", },
+    })
     require("mason-lspconfig").setup()
   end,
 }
