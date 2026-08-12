@@ -206,9 +206,6 @@ return {
     'savq/melange-nvim',
   },
   {
-    'nyoom-engineering/oxocarbon.nvim'
-  },
-  {
     'lokaltog/vim-monotone'
   },
   {
@@ -230,7 +227,7 @@ return {
     "vague-theme/vague.nvim",
     config = function()
       require('vague').setup({
-        transparent = false, -- If true, background is not set
+        transparent = true, -- If true, background is not set
         bold = true,         -- Disable bold globally
         italic = true,       -- Disable italic globally
         on_highlights = function(hl, colors)
