@@ -228,10 +228,10 @@ return {
     config = function()
       require('vague').setup({
         transparent = true, -- If true, background is not set
-        bold = true,         -- Disable bold globally
-        italic = true,       -- Disable italic globally
+        bold = true,        -- Disable bold globally
+        italic = true,      -- Disable italic globally
         on_highlights = function(hl, colors)
-          --- Tutoial
+          --- Tutorial
           -- Replace an entire highlight group.
           -- See `:h nvim_set_hl()` for available options.
           -- hl.NewHighlight = { fg = colors.fg, bg = colors.bg, bold = true }
@@ -264,6 +264,23 @@ return {
           plus = '#7fa563',
           delta = '#f3be7c',
         },
+      })
+    end
+  },
+  {
+    'datsfilipe/vesper.nvim',
+    config = function()
+      require('vesper').setup({
+        transparent = true, -- Boolean: Sets the background to transparent
+        italics = {
+          comments = true,   -- Boolean: Italicizes comments
+          keywords = false,   -- Boolean: Italicizes keywords
+          functions = false,  -- Boolean: Italicizes functions
+          strings = false,    -- Boolean: Italicizes strings
+          variables = false,  -- Boolean: Italicizes variables
+        },
+        overrides = {},      -- A dictionary of group names, can be a function returning a dictionary or a table.
+        palette_overrides = {}
       })
     end
   }

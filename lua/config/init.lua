@@ -7,4 +7,5 @@ require("statusline")
 require("config.lazy")
 
 -- vim.cmd("colorscheme rose-pine")
-vim.cmd("colorscheme vague")
+-- vim.cmd("colorscheme vague")
+vim.cmd("colorscheme vesper")
