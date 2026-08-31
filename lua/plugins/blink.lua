@@ -66,6 +66,27 @@ return {
 		-- 	},
 		-- },
 
+    completion = {
+      -- menu = {
+      --   border = "rounded",
+      -- },
+			menu = {
+				draw = {
+					-- columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+          columns = {
+            -- { "label", "label_description", gap = 1 },
+            -- { "kind_icon", "kind", gap = 1 },
+            { "kind_icon", gap = 1, "kind", },
+            { "label", "label_description" },
+          }
+        },
+			},
+      documentation = {
+        auto_show = true,
+        -- window = { border = "rounded" },
+      },
+    },
+
 		-- Blink.cmp uses a Rust fuzzy matcher by default for typo resistance and significantly better performance
 		-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
 		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
